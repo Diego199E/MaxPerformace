@@ -41,7 +41,8 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button variant="outline" size="xl" asChild>
-              <Link to="/productos/proteinas">
+              <Link to="/productos/proteinas"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 Explorar Proteínas
               </Link>
             </Button>
