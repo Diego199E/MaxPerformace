@@ -56,6 +56,7 @@ export function CategorySection() {
           <Link 
             key={category.id}
             to={`/productos/${category.slug}`}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="category-card aspect-square group"
           >
             <div className="p-6 flex flex-col items-center justify-center h-full text-center">
