@@ -28,7 +28,8 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <Link to={`/producto/${product.slug}`} className="product-card block group">
+    <Link to={`/producto/${product.slug}`} className="product-card block group"
+    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
       {/* Image */}
       <div className="relative aspect-square bg-secondary overflow-hidden">
         {product.image_url ? (
