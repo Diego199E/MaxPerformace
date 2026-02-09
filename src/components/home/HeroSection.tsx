@@ -35,7 +35,8 @@ export function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
             <Button variant="hero" size="xl" asChild>
-              <Link to="/productos" className="gap-2">
+              <Link to="/productos" className="gap-2"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 Ver Productos
                 <ArrowRight className="h-5 w-5" />
               </Link>
