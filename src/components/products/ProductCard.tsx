@@ -50,7 +50,10 @@ export function ProductCard({ product }: ProductCardProps) {
           </Badge>
         )}
         {product.is_featured && (
-          <Badge variant="featured" className="absolute top-3 right-3">
+          <Badge 
+          variant="featured" 
+          className="absolute top-10 right-3 sm:top-3"
+          >
             Destacado
           </Badge>
         )}
