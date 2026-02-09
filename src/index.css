@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fitness E-commerce Design System - Bold, energetic, powerful */
+
+@layer base {
+  :root {
+    /* Dark fitness theme with lime accent */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    /* golden accent - energy, power */
+    --primary: 45 87% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 45 87% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 68 92% 58%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(56, 100%, 53%) 0%, hsl(49, 74%, 50%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0, 0%, 7%) 0%, hsl(0, 0%, 4%) 100%);
+    --gradient-card-hover: linear-gradient(180deg, hsl(0, 0%, 9%) 0%, hsl(0, 0%, 7%) 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 20px hsl(68, 92%, 58%, 0.3);
+    --shadow-card: 0 4px 24px hsl(0, 0%, 0%, 0.4);
+    --shadow-elevated: 0 8px 32px hsl(0, 0%, 0%, 0.6);
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 68 92% 58%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 68 92% 58%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 68 92% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+}
+
+@layer components {
+  /* Product card styles */
+  .product-card {
+    @apply relative bg-card rounded-xl overflow-hidden transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Badge styles */
+  .badge-sale {
+    @apply absolute top-3 left-3 bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide;
+  }
+
+  .badge-featured {
+    @apply absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide;
+  }
+
+  /* Button glow effect */
+  .btn-glow {
+    @apply relative overflow-hidden;
+    transition: all 0.3s ease;
+  }
+
+  .btn-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Category card */
+  .category-card {
+    @apply relative bg-secondary rounded-xl overflow-hidden transition-all duration-300 cursor-pointer;
+  }
+
+  .category-card:hover {
+    @apply bg-muted;
+    transform: scale(1.02);
+  }
+
+  /* Price styles */
+  .price-original {
+    @apply text-muted-foreground line-through text-sm;
+  }
+
+  .price-discounted {
+    @apply text-destructive font-bold;
+  }
+
+  .price-current {
+    @apply text-primary font-bold text-xl;
+  }
+
+  /* Stock indicator */
+  .stock-available {
+    @apply text-[hsl(var(--success))] flex items-center gap-1 text-sm;
+  }
+
+  .stock-low {
+    @apply text-[hsl(var(--warning))] flex items-center gap-1 text-sm;
+  }
+
+  .stock-unavailable {
+    @apply text-destructive flex items-center gap-1 text-sm;
+  }
+
+  /* Hero section */
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(0, 0%, 7%) 0%, hsl(0, 0%, 4%) 50%, hsl(68, 50%, 10%) 100%);
+  }
+
+  /* Section title */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  /* Animate fade in */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animate scale */
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
