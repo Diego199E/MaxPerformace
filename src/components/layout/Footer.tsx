@@ -95,7 +95,7 @@ export function Footer() {
                 <FaFacebookF className="h-6 w-6" />
               </a>
               <a
-                href="https://www.tiktok.com/es-419/"
+                href="https://www.tiktok.com/@maxperformance8?_r=1&_t=ZS-93mgr2OvR80"
                 target="_blank"
                 className="p-2 bg-secondary rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Facebook"

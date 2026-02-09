@@ -16,6 +16,7 @@ export function FeaturedProducts() {
         <Link 
           to="/productos" 
           className="hidden md:flex items-center gap-2 text-primary hover:underline font-medium"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           Ver todos
           <ArrowRight className="h-4 w-4" />
